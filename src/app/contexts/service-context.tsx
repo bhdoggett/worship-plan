@@ -17,7 +17,7 @@ const ServiceProvider = ({ children }) => {
       id: 2,
       type: "item",
       props: {
-        time: { minutes: 2, seconds: 30 },
+        time: { minutes: "2", seconds: "30" },
         title: "Psalm 100",
         description: `Shout for joy to the Lord, all the earth.
             Worship the Lord with gladness;

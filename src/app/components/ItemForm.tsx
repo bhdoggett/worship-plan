@@ -1,12 +1,13 @@
 "use client";
 import { useState } from "react";
 import { useService } from "../contexts/service-context";
+import { isNumberObject } from "util/types";
 
 const ItemForm = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [minutes, setMinutes] = useState(0);
-  const [seconds, setSeconds] = useState(0);
+  const [minutes, setMinutes] = useState("");
+  const [seconds, setSeconds] = useState("");
   const [person, setPerson] = useState("");
   const { allItems, setAllItems, getNextId } = useService();
 
@@ -28,8 +29,8 @@ const ItemForm = () => {
 
     setTitle("");
     setDescription("");
-    setMinutes(0);
-    setSeconds(0);
+    setMinutes("");
+    setSeconds("");
     setPerson("");
   };
 
