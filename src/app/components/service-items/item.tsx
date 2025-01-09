@@ -9,7 +9,7 @@ const Item = ({ time, title, description, person }) => {
       <div className="duration text-sm text-gray-600 w-10">
         {time.minutes}:{time.seconds}
       </div>
-      <div className="title-description flex flex-col w-20">
+      <div className="title-description flex flex-col w-72">
         <div className="title font-bold text-lg">{title}</div>
         <div className="description whitespace-pre-wrap text-gray-800">
           {description}
