@@ -4,11 +4,11 @@ import { useService } from "../contexts/service-context";
 import { isNumberObject } from "util/types";
 
 const ItemForm = () => {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [minutes, setMinutes] = useState("");
-  const [seconds, setSeconds] = useState("");
-  const [person, setPerson] = useState("");
+  const [title, setTitle] = useState<string>("");
+  const [description, setDescription] = useState<string>("");
+  const [minutes, setMinutes] = useState<string>("");
+  const [seconds, setSeconds] = useState<string>("");
+  const [person, setPerson] = useState<string>("");
   const { allItems, setAllItems, getNextId } = useService();
 
   const addItem = (e: React.FormEvent) => {
@@ -37,42 +37,64 @@ const ItemForm = () => {
   return (
     <div className="service-form">
       <form onSubmit={addItem}>
-        <label htmlFor="title">Title:</label>
+        <label htmlFor="title" className="font-semibold">
+          Title:
+        </label>
         <input
           type="text"
           id="title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+          className="border-2 rounded m-1"
+          required
         />
-        <label htmlFor="description">Description:</label>
+        <label htmlFor="description" className="font-semibold">
+          Description:
+        </label>
         <input
           type="text"
           id="description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
+          className="border-2 rounded m-1"
+          required
         />
-        <label htmlFor="person">Person:</label>
+        <label htmlFor="person" className="font-semibold">
+          Person:
+        </label>
         <input
           type="text"
           id="person"
           value={person}
           onChange={(e) => setPerson(e.target.value)}
+          className="border-2 rounded m-1"
+          required
         />
-        <label htmlFor="minutes">Minutes:</label>
+        <label htmlFor="minutes" className="font-semibold">
+          Minutes:
+        </label>
         <input
           type="text"
           id="minutes"
           value={minutes}
-          onChange={(e) => setMinutes(parseInt(e.target.value))}
+          onChange={(e) => setMinutes(e.target.value)}
+          className="border-2 rounded m-1"
+          required
         />
-        <label htmlFor="seconds">Seconds:</label>
+        <label htmlFor="seconds" className="font-semibold">
+          Seconds:
+        </label>
         <input
           type="text"
           id="minutes"
           value={seconds}
-          onChange={(e) => setSeconds(parseInt(e.target.value))}
+          onChange={(e) => setSeconds(e.target.value)}
+          className="border-2 rounded m-1"
+          required
         />
-        <button>Submit</button>
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-0.5 px-1 border border-blue-700 rounded">
+          Submit
+        </button>
       </form>
     </div>
   );

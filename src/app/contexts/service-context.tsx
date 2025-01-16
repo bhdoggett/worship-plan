@@ -2,7 +2,13 @@
 
 import { useState, createContext, useContext } from "react";
 
-const ServiceContext = createContext();
+type ServiceContextType = {
+  allItems: [];
+  setAllItems: () => {};
+  getNextId: () => {};
+};
+
+const ServiceContext = createContext<ServiceContextType | undefined>(undefined);
 
 export const useService = () => useContext(ServiceContext);
 
