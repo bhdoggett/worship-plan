@@ -9,11 +9,8 @@ interface ItemProps {
 
 const Item: React.FC<ItemProps> = ({ time, title, description, person }) => {
   return (
-    <div
-      className="flex items-start gap-32
-     items-center border"
-    >
-      <div className="duration text-sm text-gray-600 w-4">
+    <div className="flex items-start gap-32 items-center max-w-full rounded-none">
+      <div className="duration flex flex-col w-20 justify-center text-sm text-gray-600  justify-center items-center">
         {time.minutes}:{time.seconds}
       </div>
       <div className="title-description flex flex-col w-96">

@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { useService } from "../contexts/services-context";
+import { useService } from "../../contexts/services-context";
 import { isNumberObject } from "util/types";
 
 const ItemForm = ({ getNextId, allItems, setAllItems }) => {
@@ -35,7 +35,7 @@ const ItemForm = ({ getNextId, allItems, setAllItems }) => {
   };
 
   return (
-    <div className="service-form">
+    <div className="service-form border-2 border-slate-500 rounded m-5 p-2">
       <form onSubmit={addItem}>
         <label htmlFor="title" className="font-semibold">
           Title:

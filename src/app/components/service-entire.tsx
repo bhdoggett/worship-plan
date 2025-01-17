@@ -1,6 +1,6 @@
 "use client";
 import { useParams } from "next/navigation";
-import ItemForm from "./ItemForm";
+import ItemForm from "./forms/ItemForm";
 import Header from "./service-items/header";
 import Item from "./service-items/item";
 import { useState } from "react";
@@ -57,7 +57,9 @@ export default function Service({ serviceId }) {
 
   return (
     <div>
-      {allItems.map(renderComponent)}
+      <div className="border-2 border-slate-500 m-5 rounded overflow-hidden">
+        {allItems.map(renderComponent)}
+      </div>
       <ItemForm
         getNextId={getNextId}
         allItems={allItems}
