@@ -1,31 +1,61 @@
 [
   {
-    "id": 1,
-    "type": "header",
-    "props": { "title": "Call to Worship" }
+    "serviceId": "1",
+    "date": "2025-01-16T00:00:00Z",
+    "title": "Communion",
+    "items": [
+      {
+        "itemId": "1",
+        "type": "header",
+        "props": { "title": "Welcome" }
+      },
+      {
+        "itemId": "2",
+        "type": "item",
+        "props": {
+          "time": { "minutes": "2", "seconds": "00" },
+          "title": "Welcome",
+          "description": "Welcome to Capital Pres Herndon. \nMy name is ______, and I'm one of the pastors here...",
+          "person": "Timo Sazo"
+        }
+      },
+      {
+        "itemId": "3",
+        "type": "header",
+        "props": { "title": "Call to Worship" }
+      },
+      {
+        "itemId": "4",
+        "type": "item",
+        "props": {
+          "time": { "minutes": "2", "seconds": "30" },
+          "title": "Psalm 100",
+          "description": "Shout for joy to the Lord, all the earth.\n\tWorship the Lord with gladness;\n\tcome before him with joyful songs.\nKnow that the Lord is God.\n\tIt is he who made us, and we are his;\n\twe are his people, the sheep of his pasture.\n\nEnter his gates with thanksgiving\n\tand his courts with praise;\n\tgive thanks to him and praise his name.\nFor the Lord is good and his love endures forever;\n\this faithfulness continues through all generations.",
+          "person": "Joe Palekas"
+        }
+      }
+    ]
   },
   {
-    "id": 2,
-    "type": "item",
-    "props": {
-      "time": { "minutes": "2", "seconds": "30" },
-      "title": "Psalm 100",
-      "description": "Shout for joy to the Lord, all the earth.\n\tWorship the Lord with gladness;\n\tcome before him with joyful songs.\nKnow that the Lord is God.\n\tIt is he who made us, and we are his;\n\twe are his people, the sheep of his pasture.\n\nEnter his gates with thanksgiving\n\tand his courts with praise;\n\tgive thanks to him and praise his name.\nFor the Lord is good and his love endures forever;\n\this faithfulness continues through all generations.",
-      "person": "Joe Palekas"
-    }
+    "serviceId": "2",
+    "date": "2025-01-16T00:00:00Z",
+    "title": "Bapitsm",
+    "items": [
+      {
+        "itemId": "1",
+        "type": "header",
+        "props": { "title": "Welcome" }
+      },
+      {
+        "itemId": "2",
+        "type": "item",
+        "props": {
+          "time": { "minutes": "2", "seconds": "00" },
+          "title": "Welcome",
+          "description": "Welcome to Capital Pres Herndon. \nMy name is ______, and I'm one of the pastors here...",
+          "person": "Timo Sazo"
+        }
+      }
+    ]
   }
 ]
-
-
-{
-  "serviceId": 1
-  : Date;
-  title: string;
-  items: Items[];
-}
-
-Items {
-  itemId: string;
-  type: string;
-  props: object;
-}

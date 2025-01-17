@@ -1,5 +1,4 @@
-import Header from "./components/service-items/header";
-import Item from "./components/service-items/item";
+"use client";
 import Link from "next/link";
 
 export default function Home() {

@@ -4,40 +4,27 @@ import ItemForm from "./ItemForm";
 import Header from "./service-items/header";
 import Item from "./service-items/item";
 import { useState } from "react";
-// import { useService } from "../contexts/service-context";
+import { useServices } from "../contexts/services-context";
 
-export default function Service() {
-  const [allItems, setAllItems] = useState([
-    {
-      id: 1,
-      type: "header",
-      props: { title: "Call to Worship" },
-    },
-    {
-      id: 2,
-      type: "item",
-      props: {
-        time: { minutes: "2", seconds: "30" },
-        title: "Psalm 100",
-        description: `Shout for joy to the Lord, all the earth.
-            Worship the Lord with gladness;
-            come before him with joyful songs.
-        Know that the Lord is God.
-            It is he who made us, and we are his[a];
-            we are his people, the sheep of his pasture.
+export default function Service({ serviceId }) {
+  const context = useServices();
 
-        Enter his gates with thanksgiving
-            and his courts with praise;
-            give thanks to him and praise his name.
-        For the Lord is good and his love endures forever;
-            his faithfulness continues through all generations.`,
-        person: "Joe Palekas",
-      },
-    },
-  ]);
-  const { serviceId } = useParams();
+  console.log("service id", serviceId);
 
-  const idNum = Number(serviceId);
+  if (!context) {
+    return <div>Loading...</div>;
+  }
+
+  const { allServices } = context;
+
+  console.log("allservices from service-entire page", allServices);
+  const [allItems, setAllItems] = useState(
+    allServices.find((service) => service.serviceId === serviceId)?.items
+  );
+
+  console.log("allitems for this service", allItems);
+
+  const serviceIdNum = Number(serviceId);
 
   // if (!allItems.find((contact) => contact.id === idNum)) {
   //   return (
@@ -51,22 +38,23 @@ export default function Service() {
   // }
 
   const getNextId = () => {
-    const itemIds = allItems.map((item) => parseInt(item.id));
+    const itemIds = allItems.map((item) => parseInt(item.itemId));
     return Math.max(...itemIds, 0) + 1;
   };
 
   const renderComponent = (component) => {
     switch (component.type) {
       case "header":
-        return <Header key={component.id} {...component.props} />;
+        return <Header key={component.itemId} {...component.props} />;
       case "item":
-        return <Item key={component.id} {...component.props} />;
+        return <Item key={component.itemId} {...component.props} />;
       default:
         return null;
     }
   };
 
   console.log(allItems);
+
   return (
     <div>
       {allItems.map(renderComponent)}

@@ -12,7 +12,7 @@ import services from "../../data/services.json";
 
 interface Service {
   serviceId: string;
-  date: Date;
+  date: string;
   title: string;
   items: Items[];
 }
@@ -40,7 +40,7 @@ interface ServicesProviderProps {
 }
 
 const ServicesProvider: React.FC<ServicesProviderProps> = ({ children }) => {
-  const [allServices, setAllServices] = useState<Service[] | []>([]);
+  const [allServices, setAllServices] = useState<Service[]>(services);
 
   const addService = (service: Service): void => {
     setAllServices([...allServices, service]);
