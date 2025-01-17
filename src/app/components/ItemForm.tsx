@@ -1,15 +1,15 @@
 "use client";
 import { useState } from "react";
-import { useService } from "../contexts/service-context";
+import { useService } from "../contexts/services-context";
 import { isNumberObject } from "util/types";
 
-const ItemForm = () => {
+const ItemForm = ({ getNextId, allItems, setAllItems }) => {
   const [title, setTitle] = useState<string>("");
   const [description, setDescription] = useState<string>("");
   const [minutes, setMinutes] = useState<string>("");
   const [seconds, setSeconds] = useState<string>("");
   const [person, setPerson] = useState<string>("");
-  const { allItems, setAllItems, getNextId } = useService();
+  // const { allItems, setAllItems, getNextId } = useService();
 
   const addItem = (e: React.FormEvent) => {
     e.preventDefault();
