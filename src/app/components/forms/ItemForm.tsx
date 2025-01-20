@@ -1,98 +1,134 @@
 "use client";
 import { useState } from "react";
-import { useService } from "../../contexts/services-context";
-import { isNumberObject } from "util/types";
+// import { useServices } from "../../contexts/services-context";
+import ReactQuill from "react-quill-new";
+import "react-quill-new/dist/quill.snow.css";
 
-const ItemForm = ({ getNextId, allItems, setAllItems }) => {
+interface ItemFormProps {
+  getNextId: () => string;
+  allItems: [];
+  setAllItems: () => void;
+}
+
+const ItemForm: React.FC<ItemFormProps> = ({
+  getNextId,
+  allItems,
+  setAllItems,
+}) => {
   const [title, setTitle] = useState<string>("");
-  const [description, setDescription] = useState<string>("");
+  const [content, setContent] = useState<string>("");
   const [minutes, setMinutes] = useState<string>("");
   const [seconds, setSeconds] = useState<string>("");
   const [person, setPerson] = useState<string>("");
-  // const { allItems, setAllItems, getNextId } = useService();
 
   const addItem = (e: React.FormEvent) => {
     e.preventDefault();
 
     const newItem = {
-      id: getNextId(),
+      itemId: getNextId(),
       type: "item",
       props: {
         time: { minutes: minutes, seconds: seconds },
         title: title,
-        description: description,
+        content: content,
         person: person,
       },
     };
 
     setAllItems([...allItems, newItem]);
 
+    console.log(JSON.stringify(content));
     setTitle("");
-    setDescription("");
+    setContent("");
     setMinutes("");
     setSeconds("");
     setPerson("");
   };
 
   return (
-    <div className="service-form border-2 border-slate-500 rounded m-5 p-2">
-      <form onSubmit={addItem}>
-        <label htmlFor="title" className="font-semibold">
-          Title:
-        </label>
-        <input
-          type="text"
-          id="title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          className="border-2 rounded m-1"
-          required
-        />
-        <label htmlFor="description" className="font-semibold">
-          Description:
-        </label>
-        <input
-          type="text"
-          id="description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          className="border-2 rounded m-1"
-          required
-        />
-        <label htmlFor="person" className="font-semibold">
-          Person:
-        </label>
-        <input
-          type="text"
-          id="person"
-          value={person}
-          onChange={(e) => setPerson(e.target.value)}
-          className="border-2 rounded m-1"
-          required
-        />
-        <label htmlFor="minutes" className="font-semibold">
-          Minutes:
-        </label>
-        <input
-          type="text"
-          id="minutes"
-          value={minutes}
-          onChange={(e) => setMinutes(e.target.value)}
-          className="border-2 rounded m-1"
-          required
-        />
-        <label htmlFor="seconds" className="font-semibold">
-          Seconds:
-        </label>
-        <input
-          type="text"
-          id="minutes"
-          value={seconds}
-          onChange={(e) => setSeconds(e.target.value)}
-          className="border-2 rounded m-1"
-          required
-        />
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-0.5 px-1 border border-blue-700 rounded">
+    <div className="service-form border-2 border-slate-500 rounded m-5 p-5 w-1/3 inline-block">
+      {/* Header Section */}
+      <h1 className="text-2xl font-bold mb-4 text-center">Add Item</h1>
+
+      {/* Form Section */}
+      <form onSubmit={addItem} className="flex flex-col space-y-4 items-center">
+        {/* Title Field */}
+        <div className="w-full">
+          <label htmlFor="title" className="font-semibold block">
+            Title:
+          </label>
+          <input
+            type="text"
+            id="title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            className="border-2 rounded w-full p-2"
+            required
+          />
+        </div>
+
+        {/* Content Field (ReactQuill) */}
+        <div className="w-full">
+          <label htmlFor="content" className="font-semibold block">
+            Content:
+          </label>
+          <ReactQuill
+            value={content}
+            onChange={(content) => setContent(content)}
+            className="border-2 rounded"
+          />
+        </div>
+
+        {/* Person Field */}
+        <div className="w-full">
+          <label htmlFor="person" className="font-semibold block">
+            Person:
+          </label>
+          <input
+            type="text"
+            id="person"
+            value={person}
+            onChange={(e) => setPerson(e.target.value)}
+            className="border-2 rounded w-full p-2"
+            required
+          />
+        </div>
+
+        {/* Time Fields */}
+        <div className="flex w-full justify-between space-x-4">
+          <div className="w-1/2">
+            <label htmlFor="minutes" className="font-semibold block">
+              Minutes:
+            </label>
+            <input
+              type="text"
+              id="minutes"
+              value={minutes}
+              onChange={(e) => setMinutes(e.target.value)}
+              className="border-2 rounded w-full p-2"
+              required
+            />
+          </div>
+          <div className="w-1/2">
+            <label htmlFor="seconds" className="font-semibold block">
+              Seconds:
+            </label>
+            <input
+              type="text"
+              id="seconds"
+              value={seconds}
+              onChange={(e) => setSeconds(e.target.value)}
+              className="border-2 rounded w-full p-2"
+              required
+            />
+          </div>
+        </div>
+
+        {/* Submit Button */}
+        <button
+          type="submit"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >
           Submit
         </button>
       </form>

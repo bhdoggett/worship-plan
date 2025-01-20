@@ -1,12 +1,17 @@
 "use client";
 import { useParams } from "next/navigation";
 import ItemForm from "./forms/ItemForm";
+import HeaderForm from "./forms/HeaderForm";
 import Header from "./service-items/header";
 import Item from "./service-items/item";
-import { useState } from "react";
+import { JSXElementConstructor, useState } from "react";
 import { useServices } from "../contexts/services-context";
 
-export default function Service({ serviceId }) {
+interface ServiceProps {
+  serviceId: string;
+}
+
+const Service: React.FC<ServiceProps> = ({ serviceId }) => {
   const context = useServices();
 
   console.log("service id", serviceId);
@@ -24,22 +29,9 @@ export default function Service({ serviceId }) {
 
   console.log("allitems for this service", allItems);
 
-  const serviceIdNum = Number(serviceId);
-
-  // if (!allItems.find((contact) => contact.id === idNum)) {
-  //   return (
-  //     <div>
-  //       <h2>No contact matches ID: {id}</h2>
-  //       <Link href="/contacts">
-  //         <button>Back to Contacts</button>
-  //       </Link>
-  //     </div>
-  //   );
-  // }
-
-  const getNextId = () => {
+  const getNextId = (): string => {
     const itemIds = allItems.map((item) => parseInt(item.itemId));
-    return Math.max(...itemIds, 0) + 1;
+    return (Math.max(...itemIds, 0) + 1).toString();
   };
 
   const renderComponent = (component) => {
@@ -65,6 +57,13 @@ export default function Service({ serviceId }) {
         allItems={allItems}
         setAllItems={setAllItems}
       />
+      <HeaderForm
+        getNextId={getNextId}
+        allItems={allItems}
+        setAllItems={setAllItems}
+      />
     </div>
   );
-}
+};
+
+export default Service;
