@@ -1,0 +1,188 @@
+[
+  {
+    "serviceId": "1",
+    "date": "2025-01-16T00:00:00Z",
+    "title": "Communion",
+    "items": [
+      {
+        "itemId": "1",
+        "type": "header",
+        "props": {
+          "title": "Welcome",
+          "description": "We gather in the name of Christ."
+        }
+      },
+      {
+        "itemId": "2",
+        "type": "item",
+        "props": {
+          "time": { "minutes": "2", "seconds": "00" },
+          "title": "Welcome",
+          "content": "Welcome to Capital Pres Herndon. \nMy name is ______, and I'm one of the pastors here...",
+          "person": "Timo Sazo"
+        }
+      },
+      {
+        "itemId": "3",
+        "type": "header",
+        "props": {
+          "title": "Call to Worship",
+          "description": "The Lord invites us to meet with him in worship."
+        }
+      },
+      {
+        "itemId": "4",
+        "type": "item",
+        "props": {
+          "time": { "minutes": "2", "seconds": "30" },
+          "title": "Psalm 100",
+          "content": "<p><strong>Leader:\tShout for joy to the Lord, all the earth.</strong></p><p><strong>\t\t\t\t\tWorship the Lord with gladness;</strong></p><p>\t\t\t\t\t<strong>come before him with joyful songs.</strong></p><p><br></p><p>All: \t\t\tKnow that the Lord is God.</p><p>\t\t\t\t\tIt is he who made us, and we are his;</p><p>\t\t\t\t\twe are his people, the sheep of his pasture.</p><p><br></p><p><strong>Leader: \tEnter his gates with thanksgiving</strong></p><p><strong>\t\t\t\t\tand his courts with praise;</strong></p><p><strong>\t\t\t\t\tgive thanks to him and praise his name.</strong></p><p><br></p><p>All: \t\t\tFor the Lord is good and his love endures forever;</p><p>\t\t\t\t\this faithfulness continues through all generations.</p>",
+          "person": "Timo Sazo"
+        }
+      },
+      {
+        "itemId": "5",
+        "type": "header",
+        "props": {
+          "title": "Invocation",
+          "description": "We invite the Lord to meet with us."
+        }
+      },
+      {
+        "itemId": "6",
+        "type": "header",
+        "props": {
+          "title": "Songs of Praise",
+          "description": "We worship God in song, remembering who He is and what he has done."
+        }
+      },
+      {
+        "itemId": "7",
+        "type": "header",
+        "props": {
+          "title": "Confession",
+          "description": "We acknowledge our sins to the Lord and to one another."
+        }
+      },
+      {
+        "itemId": "8",
+        "type": "item",
+        "props": {
+          "time": { "minutes": "2", "seconds": "00" },
+          "content": "<p><strong>Most merciful God,</strong></p><p><strong>we confess that we have sinned against you</strong></p><p><strong>in thought, word, and deed, by what we have done,</strong></p><p><strong>and by what we have left undone.</strong></p><p><strong>We have not loved you with our whole heart;</strong></p><p><strong>we have not loved our neighbors as ourselves.</strong></p><p><strong>We are truly sorry and we humbly repent.</strong></p><p><strong>For the sake of your Son Jesus Christ,</strong></p><p><strong>have mercy on us and forgive us;</strong></p><p><strong>that we may delight in your will, and walk in your ways, </strong></p><p><strong>to the glory of your Name. Amen.</strong></p><p><br></p>",
+          "person": "Timo Sazo"
+        }
+      },
+      {
+        "itemId": "9",
+        "type": "header",
+        "props": {
+          "title": "Assurance",
+          "description": "God assures us of our forgiveness in Christ."
+        }
+      },
+      {
+        "itemId": "10",
+        "type": "header",
+        "props": {
+          "title": "The Peace",
+          "description": "We receive God's peace and extend it to others."
+        }
+      },
+      {
+        "itemId": "11",
+        "type": "header",
+        "props": {
+          "title": "Church Life Updates",
+          "description": "God is at working in and through us."
+        }
+      },
+      {
+        "itemId": "12",
+        "type": "header",
+        "props": {
+          "title": "Congregational Prayer",
+          "description": "We bring our personal and communal concerns to our Father in heaven."
+        }
+      },
+      {
+        "itemId": "13",
+        "type": "header",
+        "props": {
+          "title": "Congregational Prayer",
+          "description": "We bring our personal and communal concerns to our Father in heaven."
+        }
+      },
+      {
+        "itemId": "14",
+        "type": "header",
+        "props": {
+          "title": "Song of Preparation",
+          "description": "We ready our hearts to recieve God's Word."
+        }
+      },
+      {
+        "itemId": "15",
+        "type": "header",
+        "props": {
+          "title": "Scripture Reading",
+          "description": "God speaks, and we listen."
+        }
+      },
+      {
+        "itemId": "16",
+        "type": "header",
+        "props": {
+          "title": "Scripture Reading",
+          "description": "God speaks, and we listen."
+        }
+      },
+      {
+        "itemId": "17",
+        "type": "header",
+        "props": {
+          "title": "Sermon",
+          "description": "God speaks to us by the preaching of his Word.."
+        }
+      },
+      {
+        "itemId": "18",
+        "type": "header",
+        "props": {
+          "title": "Song of Response",
+          "description": "We respond to God's Word in song."
+        }
+      },
+      {
+        "itemId": "19",
+        "type": "header",
+        "props": {
+          "title": "Benediction",
+          "description": "God sends us out with his blessing."
+        }
+      }
+    ]
+  },
+  {
+    "serviceId": "2",
+    "date": "2025-01-16T00:00:00Z",
+    "title": "Bapitsm",
+    "items": [
+      {
+        "itemId": "1",
+        "type": "header",
+        "props": { "title": "Welcome" }
+      },
+      {
+        "itemId": "2",
+        "type": "item",
+        "props": {
+          "time": { "minutes": "2", "seconds": "00" },
+          "title": "Welcome",
+          "description": "Welcome to Capital Pres Herndon. \nMy name is ______, and I'm one of the pastors here...",
+          "person": "Timo Sazo"
+        }
+      }
+    ]
+  }
+]

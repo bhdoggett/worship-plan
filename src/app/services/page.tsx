@@ -1,10 +1,10 @@
 import Service from "../components/service-entire";
-import ServiceProvider from "../contexts/service-context";
+import ServicesProvider from "../contexts/services-context";
 
 export default function Home() {
   return (
     <div>
-      <ServiceProvider>
+      <ServicesProvider>
         <Service />
       </ServiceProvider>
     </div>
