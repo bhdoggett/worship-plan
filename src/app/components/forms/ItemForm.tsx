@@ -28,7 +28,10 @@ const ItemForm: React.FC<ItemFormProps> = ({
       itemId: getNextId(),
       type: "item",
       props: {
-        time: { minutes: minutes, seconds: seconds },
+        time: {
+          minutes: minutes,
+          seconds: seconds.length === 2 ? seconds : `0${seconds}`,
+        },
         title: title,
         content: content,
         person: person,
@@ -46,9 +49,9 @@ const ItemForm: React.FC<ItemFormProps> = ({
   };
 
   return (
-    <div className="service-form border-2 border-slate-500 rounded m-5 p-5 w-1/3 inline-block">
+    <div className="service-form border-2 border-slate-500 rounded m-3 p-3">
       {/* Header Section */}
-      <h1 className="text-2xl font-bold mb-4 text-center">Add Item</h1>
+      <h1 className="text-2xl font-bold mb-2 text-center">Add Item</h1>
 
       {/* Form Section */}
       <form onSubmit={addItem} className="flex flex-col space-y-4 items-center">
@@ -117,7 +120,9 @@ const ItemForm: React.FC<ItemFormProps> = ({
               type="text"
               id="seconds"
               value={seconds}
-              onChange={(e) => setSeconds(e.target.value)}
+              onChange={(e) => {
+                setSeconds(e.target.value);
+              }}
               className="border-2 rounded w-full p-2"
               required
             />

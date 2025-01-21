@@ -24,12 +24,15 @@ const HeaderForm = ({ getNextId, allItems, setAllItems }) => {
   };
 
   return (
-    <div className="service-form border-2 border-slate-500 rounded m-5 p-5 w-1/3 inline-block">
+    <div className="service-form border-2 border-slate-500 rounded mx-3 px-3">
       {/* Header Section */}
-      <h1 className="text-2xl font-bold mb-4 text-center">Add Header</h1>
+      <h1 className="text-2xl font-bold mb-2 text-center p-3">Add Header</h1>
 
       {/* Form Section */}
-      <form onSubmit={addItem} className="flex flex-col space-y-4 items-center">
+      <form
+        onSubmit={addItem}
+        className="flex flex-col space-y-2 items-center p-3"
+      >
         <div className="w-full">
           <label htmlFor="header" className="font-semibold block">
             Header:

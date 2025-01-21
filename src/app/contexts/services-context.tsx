@@ -9,19 +9,8 @@ import {
   SetStateAction,
 } from "react";
 import services from "../../data/services.json";
-
-interface Service {
-  serviceId: string;
-  date: string;
-  title: string;
-  items: Items[];
-}
-
-interface Items {
-  itemId: string;
-  type: string;
-  props: object;
-}
+import { Service } from "@/types/Service";
+import { Items } from "@/types/ItemType";
 
 type ServicesContextType = {
   allServices: Service[];
@@ -33,7 +22,13 @@ const ServicesContext = createContext<ServicesContextType | undefined>(
   undefined
 );
 
-export const useServices = () => useContext(ServicesContext);
+export const useServices = (): ServicesContextType => {
+  const context = useContext(ServicesContext);
+  if (!context) {
+    throw new Error("useServices must be used within a ServicesProvider");
+  }
+  return context;
+};
 
 interface ServicesProviderProps {
   children: ReactNode;
