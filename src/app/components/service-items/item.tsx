@@ -20,7 +20,7 @@ const Item: React.FC<ItemProps> = ({
   citation,
 }) => {
   return (
-    <div className="flex items-start gap-8 max-w-full rounded-none border-b border-slate-500">
+    <div className="flex items-start gap-8 max-w-full rounded-none border-b border-slate-500 items-center">
       <div className="duration flex flex-col w-20 justify-center text-sm text-gray-600 items-center">
         {time.minutes}:{time.seconds}
       </div>
