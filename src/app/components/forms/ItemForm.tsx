@@ -20,6 +20,8 @@ const ItemForm: React.FC<ItemFormProps> = ({
   const [minutes, setMinutes] = useState<string>("");
   const [seconds, setSeconds] = useState<string>("");
   const [person, setPerson] = useState<string>("");
+  const [link, setLink] = useState<string>("");
+  const [citation, setCitation] = useState<string>("");
 
   const addItem = (e: React.FormEvent) => {
     e.preventDefault();
@@ -32,9 +34,11 @@ const ItemForm: React.FC<ItemFormProps> = ({
           minutes: minutes,
           seconds: seconds.length === 2 ? seconds : `0${seconds}`,
         },
-        title: title,
-        content: content,
-        person: person,
+        title,
+        content,
+        person,
+        citation,
+        link,
       },
     };
 
@@ -49,7 +53,7 @@ const ItemForm: React.FC<ItemFormProps> = ({
   };
 
   return (
-    <div className="service-form border-2 border-slate-500 rounded m-3 p-3">
+    <div className="service-form border-2 border-slate-500 rounded p-3">
       {/* Header Section */}
       <h1 className="text-2xl font-bold mb-2 text-center">Add Item</h1>
 
@@ -127,6 +131,31 @@ const ItemForm: React.FC<ItemFormProps> = ({
               required
             />
           </div>
+        </div>
+        <div className="w-full">
+          <label htmlFor="citation" className="font-semibold block">
+            Citation:
+          </label>
+          <input
+            type="text"
+            id="citation"
+            value={citation}
+            onChange={(e) => setCitation(e.target.value)}
+            className="border-2 rounded w-full p-2"
+          />
+        </div>
+
+        <div className="w-full">
+          <label htmlFor="link" className="font-semibold block">
+            Link:
+          </label>
+          <input
+            type="text"
+            id="link"
+            value={link}
+            onChange={(e) => setLink(e.target.value)}
+            className="border-2 rounded w-full p-2"
+          />
         </div>
 
         {/* Submit Button */}

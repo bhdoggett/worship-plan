@@ -24,7 +24,7 @@ const HeaderForm = ({ getNextId, allItems, setAllItems }) => {
   };
 
   return (
-    <div className="service-form border-2 border-slate-500 rounded mx-3 px-3">
+    <div className="service-form border-2 border-slate-500 rounded mb-3 px-3 ">
       {/* Header Section */}
       <h1 className="text-2xl font-bold mb-2 text-center p-3">Add Header</h1>
 

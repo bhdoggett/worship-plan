@@ -7,7 +7,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ title, description }) => {
   return (
-    <div className="header bg-gray-300 pl-3 py-2 flex items-center w-full">
+    <div className="header bg-gray-300 pl-3 py-2 flex items-center w-full border-b border-slate-500 ">
       <h1 className="text-lg font-bold">{title.toUpperCase()}</h1>
       {description && (
         <span className="text-md text-gray-800 pl-4">{description}</span>

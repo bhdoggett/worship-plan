@@ -64,7 +64,7 @@ const Service: React.FC<ServiceProps> = ({ serviceId }) => {
   return (
     <div>
       <div className="title mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white text-center">
-        <h1 className="">
+        <h1 className="mt-6 mb-10">
           {formattedDate} - {thisService.title}
         </h1>
       </div>
@@ -72,7 +72,7 @@ const Service: React.FC<ServiceProps> = ({ serviceId }) => {
         <div className="border-2 border-slate-500 mx-5 rounded overflow-hidden col-span-3">
           {allItems.map(renderComponent)}
         </div>
-        <div className="block mb-3 mr-3">
+        <div className="block mr-3">
           <HeaderForm
             getNextId={getNextId}
             allItems={allItems}
